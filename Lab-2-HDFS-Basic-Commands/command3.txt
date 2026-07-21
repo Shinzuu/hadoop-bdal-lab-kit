@@ -1,0 +1,1 @@
+command3 - hello from HDFS basics lab

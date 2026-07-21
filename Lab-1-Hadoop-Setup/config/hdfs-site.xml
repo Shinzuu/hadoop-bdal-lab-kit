@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
+<!--
+  hdfs-site.xml  — goes in  $HADOOP_HOME/etc/hadoop/
+  replication = 1  because this is a single-node cluster.
+  LINUX/WSL2 : leave as-is.
+  WINDOWS    : change the two dir values to Windows paths with forward slashes, e.g.
+               <value>file:///C:/hadoop/data/namenode</value>
+               <value>file:///C:/hadoop/data/datanode</value>
+-->
+<configuration>
+  <property>
+    <name>dfs.replication</name>
+    <value>1</value>
+  </property>
+  <property>
+    <name>dfs.namenode.name.dir</name>
+    <value>file://${user.home}/bigdata/hdfs/namenode</value>
+  </property>
+  <property>
+    <name>dfs.datanode.data.dir</name>
+    <value>file://${user.home}/bigdata/hdfs/datanode</value>
+  </property>
+</configuration>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
+<!--
+  core-site.xml  — goes in  $HADOOP_HOME/etc/hadoop/
+  Defines the default filesystem (HDFS) and the temp dir.
+  LINUX/WSL2 : leave as-is (${user.home} resolves to your home dir).
+  WINDOWS    : replace the hadoop.tmp.dir value with a Windows path, e.g.
+               <value>/C:/hadoop/data/tmp</value>
+-->
+<configuration>
+  <property>
+    <name>fs.defaultFS</name>
+    <value>hdfs://localhost:9000</value>
+  </property>
+  <property>
+    <name>hadoop.tmp.dir</name>
+    <value>${user.home}/bigdata/hdfs/tmp</value>
+  </property>
+</configuration>
